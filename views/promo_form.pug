@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action)
+    div.form-group
+      label(for='promo_id') Promo ID:
+      input#promo_id.form-control(type='text' placeholder='Enter Promo ID' name='promo_id' required='true' value=(undefined===promotion ? '':promotion.promo_id) )
+      label(for='planning_account') Planning Account:
+      input#planning_account.form-control(type='text' placeholder='Enter Planning Account' name='planning_account' required='true' value=(undefined===promotion ? '':promotion.planning_account) )
+      label(for='funding_account') Funding Account:
+      input#funding_account.form-control(type='text' placeholder='Enter Funding Account' name='funding_account' required='true' value=(undefined===promotion ? '':promotion.funding_account) )
+      label(for='brand') Brand:
+      input#brand.form-control(type='text' placeholder='Enter Brand Name' name='brand' required='true' value=(undefined===promotion ? '':promotion.brand) )
+      label(for='sub_brand') Sub-Brand:
+      input#sub_brand.form-control(type='text' placeholder='Enter Sub-Brand Name' name='sub_brand' required='true' value=(undefined===promotion ? '':promotion.sub_brand) )
+      label(for='discount') Discount:
+      input#discount.form-control(type='text' placeholder='Enter Discount' name='discount' required='true' value=(undefined===promotion ? '':promotion.discount) )
+      label(for='acc_mgr_status') ACC MGR Status:
+      input#acc_mgr_status.form-control(type='text' placeholder='Enter Account Manager Status' name='acc_mgr_status' required='true' value=(undefined===promotion ? '':promotion.acc_mgr_status) )
+      label(for='mo_status') MO Status:
+      input#mo_status.form-control(type='text' placeholder='Enter MO Status' name='mo_status' required='true' value=(undefined===promotion ? '':promotion.mo_status) )
+    button.btn.btn-primary(type=submit) submit
+  if errors
+    ul
+      for error in errors
+        li!=error.msg

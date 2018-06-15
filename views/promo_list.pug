@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1=title
+
+  table(style='width:100%', border='1')
+    thead
+      tr
+        th Promo ID
+        th Planning Account
+        th Funding Account
+        th Brand
+        th Sub-Brand
+        th Discount
+        th Acc Mgr status
+        th Mo Status
+    tbody
+    each promo in promo_list
+      tr
+        td
+          a(href=promo.url) #{promo.promo_id}
+        td #{promo.planning_account}
+        td #{promo.funding_account}
+        td #{promo.brand}
+        td #{promo.sub_brand}
+        td #{promo.discount}
+        td #{promo.acc_mgr_status}
+        td #{promo.mo_status}
+
+  p
+    a(href='/tfm/exporttocsv') Export As CSV
+  

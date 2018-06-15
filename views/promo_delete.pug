@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 #{title}:#{promo_delete.title}
+  table(style='width:30%', border='1')
+    tr
+      td Promo ID
+      td #{promo_delete.promo_id}
+    tr
+      td Planning Account
+      td #{promo_delete.planning_account}
+    tr
+      td Funding Account
+      td #{promo_delete.funding_account}
+    tr
+      td Brand
+      td #{promo_delete.brand}
+    tr
+      td Sub-Brand
+      td #{promo_delete.sub_brand}
+    tr
+      td Discount
+      td #{promo_delete.discount}
+    tr
+      td Acc Mgr status
+      td #{promo_delete.acc_mgr_status}
+    tr
+      td Mo Status
+      td #{promo_delete.mo_status}
+
+  p Do you really want to delete this promotion?
+
+  form(method='POST' action='')
+    div.form-group
+      input#id.form-control(type='hidden', name='id',required=true,value=promo_delete._id)
+
+    button.btn.btn-primary(type='submit') Delete

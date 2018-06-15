@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  h1 #{title}:#{promo_detail.title}
+  table(style='width:30%', border='1')
+    tr
+      td Promo ID
+      td #{promo_detail.promo_id}
+    tr
+      td Planning Account
+      td #{promo_detail.planning_account}
+    tr
+      td Funding Account
+      td #{promo_detail.funding_account}
+    tr
+      td Brand
+      td #{promo_detail.brand}
+    tr
+      td Sub-Brand
+      td #{promo_detail.sub_brand}
+    tr
+      td Discount
+      td #{promo_detail.discount}
+    tr
+      td Acc Mgr status
+      td #{promo_detail.acc_mgr_status}
+    tr
+      td Mo Status
+      td #{promo_detail.mo_status}
+
+  hr
+  p
+    a(href=promo_detail.url+'/delete') Delete Promotion
+  p
+    a(href=promo_detail.url+'/update') Update Promotion

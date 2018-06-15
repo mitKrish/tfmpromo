@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+
+  if error
+    p Error getting dynamic content.
+  else
+    p Basic Details
+
+    ul
+      li #[strong Promos]
+
+    a(href='/tfm/importfromcsv') Import Product Hierarchy
+
+    a(href='/tfm/importinvoice') Import Invoice
