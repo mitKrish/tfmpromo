@@ -12,6 +12,8 @@ var flash = require('connect-flash');
 var fs = require('fs');
 var csvfile = __dirname + '/../public/files/product.csv';
 var stream = fs.createReadStream(csvfile);
+var invoicefile = __dirname + '/../public/files/invoice.csv';
+var invoicestream = fs.createReadStream(invoicefile);
 
 exports.promo_list = function(req, res, next) {
   Promotion.find()
@@ -413,6 +415,6 @@ exports.import_from_invoice = function(req, res, next) {
     .on('end', function() {
       console.log('End of Invoice Import');
     });
-  stream.pipe(csvStream);
+  invoicestream.pipe(csvStream);
   res.redirect('/tfm');
 };
